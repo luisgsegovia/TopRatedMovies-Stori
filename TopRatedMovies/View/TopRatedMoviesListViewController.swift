@@ -9,8 +9,8 @@ import UIKit
 import Combine
 
 class TopRatedMoviesListViewController: UITableViewController {
-    private let viewModel: TopRatedMoviesViewModel
-    private var subscriptions: Set<AnyCancellable> = .init()
+    let viewModel: TopRatedMoviesViewModel
+    var subscriptions: Set<AnyCancellable> = .init()
 
     init(viewModel: TopRatedMoviesViewModel) {
         self.viewModel = viewModel
@@ -25,33 +25,14 @@ class TopRatedMoviesListViewController: UITableViewController {
         super.viewDidLoad()
 
         prepareTableView()
-        suscribe()
+        subscribeToUIState()
         viewModel.retrieveMovies()
-
     }
 
     private func prepareTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(MovieItemCellView.self, forCellReuseIdentifier: MovieItemCellView.reuseIdentifier)
-    }
-
-    private func suscribe() {
-        viewModel.$uiState.sink { [weak self] state in
-            guard let self else { return }
-
-            switch state {
-            case .loading:
-                break
-            case .idle:
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-
-            case .error:
-                break
-            }
-        }.store(in: &subscriptions)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
