@@ -1,5 +1,5 @@
 //
-//  MovieItemMapper.swift
+//  MovieItemsMapper.swift
 //  TopRatedMovies
 //
 //  Created by Luis Segovia on 27/07/24.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-final class MovieItemMapper {
-    static func map(_ data: Data, from response: HTTPURLResponse) throws -> [MovieItem] {
+final class MovieItemsMapper {
+    static func map(_ data: Data, from response: HTTPURLResponse, page: Int) throws -> MovieItems {
         guard response.statusCode == 200, let root = try? JSONDecoder().decode(TopRatedMoviesServiceResponse.self, from: data) else {
             throw TopRatedMoviesLoaderError.invalidData
         }
 
-        return root.results.map(map)
+        return MovieItems(items: root.results.map(map), hasMoreData: page < root.totalPages)
     }
 
     private static func map(_ item: MovieResult) -> MovieItem {

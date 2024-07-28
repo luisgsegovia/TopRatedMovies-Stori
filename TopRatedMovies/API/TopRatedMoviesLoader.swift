@@ -8,29 +8,31 @@
 import Foundation
 
 protocol TopRatedMoviesLoaderProtocol {
-    func retrieveMovies(page: Int) async -> Result<[MovieItem], TopRatedMoviesLoaderError>
+    func retrieveMovies(page: Int) async -> Result<MovieItems, TopRatedMoviesLoaderError>
 }
 
 final class TopRatedMoviesLoader: TopRatedMoviesLoaderProtocol {
+    private let client: HTTPClient
+    private let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated")!
+
     init(client: HTTPClient) {
         self.client = client
     }
 
-    private let client: HTTPClient
-    private let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated")!
-
-    func retrieveMovies(page: Int) async -> Result<[MovieItem], TopRatedMoviesLoaderError> {
+    func retrieveMovies(page: Int) async -> Result<MovieItems, TopRatedMoviesLoaderError> {
         let request = generateRequest(with: page)
 
         let result = await client.get(from: request).result
 
         switch result {
         case .success(let response):
-            print(String(decoding: response.0, as: UTF8.self))
-            return .success([])
+            do {
+                return try .success(MovieItemsMapper.map(response.0, from: response.1, page: page))
+            } catch {
+                return .failure(.invalidData)
+            }
         case .failure(let error):
-            print(error.localizedDescription)
-            return .failure(.invalid)
+            return .failure(.connectivity)
         }
     }
 
