@@ -109,6 +109,6 @@ final class MovieItemCellView: UITableViewCell {
     }
 
     private func setSkeletonView() {
-
+        image.setImageAnimated(UIImage())
     }
 }
