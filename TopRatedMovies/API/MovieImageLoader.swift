@@ -13,7 +13,7 @@ protocol MovieImageLoaderProtocol {
 
 final class MovieImageLoader: MovieImageLoaderProtocol {
     private let client: HTTPClient
-    private let baseUrl = "https://image.tmdb.org/t/p/w780/t"
+    private let baseUrl = "https://image.tmdb.org/t/p/w500"
 
     internal init(client: any HTTPClient) {
         self.client = client
