@@ -44,6 +44,15 @@ final class MovieItemCellView: UITableViewCell {
         return stackView
     }()
 
+    private lazy var textStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.prepareForAutoLayout()
+        stackView.axis = .vertical
+        stackView.alignment = .leading
+
+        return stackView
+    }()
+
     func configure(with item: MovieItem, viewModel: ImageViewModel) {
         self.viewModel = viewModel
 
@@ -57,10 +66,21 @@ final class MovieItemCellView: UITableViewCell {
     }
 
     private func setUpUI() {
+        textStackView.addArrangedSubview(titleLabel)
+        textStackView.addArrangedSubview(subtitleLabel)
         stackView.addArrangedSubview(image)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(subtitleLabel)
+        stackView.addArrangedSubview(textStackView)
         contentView.addSubview(stackView)
+
+        NSLayoutConstraint.activate([
+            image.widthAnchor.constraint(equalTo: image.heightAnchor, multiplier: 2.0 / 3.0),
+            image.widthAnchor.constraint(equalToConstant: 100),
+
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
 
     private func suscribeToState() {
@@ -79,7 +99,9 @@ final class MovieItemCellView: UITableViewCell {
     }
 
     private func setImage(from data: Data) {
-        image.image = UIImage(data: data)
+        DispatchQueue.main.async {
+            self.image.image = UIImage(data: data)
+        }
     }
 
     private func setPlaceholder() {
