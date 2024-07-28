@@ -18,6 +18,8 @@
 		6C321BB82C55D14B00F8B34B /* TopRatedMoviesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BB72C55D14B00F8B34B /* TopRatedMoviesLoader.swift */; };
 		6C321BBB2C55D1D900F8B34B /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BBA2C55D1D900F8B34B /* HTTPClientSpy.swift */; };
 		6C321BBD2C55D80A00F8B34B /* MovieImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BBC2C55D80A00F8B34B /* MovieImageLoader.swift */; };
+		6C321BC02C55ED9800F8B34B /* TopRatedMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BBF2C55ED9800F8B34B /* TopRatedMoviesViewModel.swift */; };
+		6C321BC22C55F40E00F8B34B /* PaginationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BC12C55F40E00F8B34B /* PaginationData.swift */; };
 		6C4446002C55BEEE00EC814B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */; };
 		6C4446022C55BEEE00EC814B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446012C55BEEE00EC814B /* SceneDelegate.swift */; };
 		6C4446042C55BEEE00EC814B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446032C55BEEE00EC814B /* ViewController.swift */; };
@@ -55,6 +57,8 @@
 		6C321BB72C55D14B00F8B34B /* TopRatedMoviesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesLoader.swift; sourceTree = "<group>"; };
 		6C321BBA2C55D1D900F8B34B /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		6C321BBC2C55D80A00F8B34B /* MovieImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageLoader.swift; sourceTree = "<group>"; };
+		6C321BBF2C55ED9800F8B34B /* TopRatedMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesViewModel.swift; sourceTree = "<group>"; };
+		6C321BC12C55F40E00F8B34B /* PaginationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationData.swift; sourceTree = "<group>"; };
 		6C4445FC2C55BEEE00EC814B /* TopRatedMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopRatedMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C4446012C55BEEE00EC814B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,23 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		6C321BBE2C55ED7600F8B34B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6C321BC32C55F41500F8B34B /* Helpers */,
+				6C321BBF2C55ED9800F8B34B /* TopRatedMoviesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6C321BC32C55F41500F8B34B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6C321BC12C55F40E00F8B34B /* PaginationData.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		6C4445F32C55BEEE00EC814B = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				6C321BA52C55C05D00F8B34B /* API */,
+				6C321BBE2C55ED7600F8B34B /* ViewModel */,
 				6C321BA22C55C00E00F8B34B /* Model */,
 				6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */,
 				6C4446012C55BEEE00EC814B /* SceneDelegate.swift */,
@@ -316,11 +338,13 @@
 				6C321BA42C55C03000F8B34B /* TopRatedMoviesServiceResponse.swift in Sources */,
 				6C321BAF2C55C62E00F8B34B /* TopRatedMoviesLoaderError.swift in Sources */,
 				6C321BAD2C55C30700F8B34B /* MovieItem.swift in Sources */,
+				6C321BC22C55F40E00F8B34B /* PaginationData.swift in Sources */,
 				6C321BB42C55C9DC00F8B34B /* MovieItems.swift in Sources */,
 				6C321BA72C55C06800F8B34B /* HTTPClient.swift in Sources */,
 				6C4446042C55BEEE00EC814B /* ViewController.swift in Sources */,
 				6C321BAB2C55C10D00F8B34B /* TopRatedMoviesLoader.swift in Sources */,
 				6C321BB22C55C6FC00F8B34B /* MovieItemsMapper.swift in Sources */,
+				6C321BC02C55ED9800F8B34B /* TopRatedMoviesViewModel.swift in Sources */,
 				6C4446002C55BEEE00EC814B /* AppDelegate.swift in Sources */,
 				6C4446022C55BEEE00EC814B /* SceneDelegate.swift in Sources */,
 				6C321BA92C55C09500F8B34B /* URLSessionHTTPClient.swift in Sources */,
