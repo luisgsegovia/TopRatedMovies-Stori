@@ -19,7 +19,7 @@ final class MovieItemsMapper {
     private static func map(_ item: MovieResult) -> MovieItem {
         return .init(
             id: item.id,
-            title: item.originalTitle,
+            title: item.title,
             overview: item.overview,
             releaseDate: item.releaseDate,
             voteAverage: item.voteAverage,
