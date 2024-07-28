@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 final class MovieItemCellView: UITableViewCell {
+    private var viewModel: ImageViewModel?
+    private var subscriptions: Set<AnyCancellable> = .init()
+
     static let reuseIdentifier = "MovieItemCellView"
 
     private lazy var image: UIImageView = {
@@ -40,25 +44,49 @@ final class MovieItemCellView: UITableViewCell {
         return stackView
     }()
 
-    func configure(with item: MovieItem) {
+    func configure(with item: MovieItem, viewModel: ImageViewModel) {
+        self.viewModel = viewModel
+
+        setUpUI()
+        suscribeToState()
+
+        titleLabel.text = item.title
+        subtitleLabel.text = item.releaseDate
+
+        viewModel.retrieveImage(from: item.posterPath)
+    }
+
+    private func setUpUI() {
         stackView.addArrangedSubview(image)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(subtitleLabel)
         contentView.addSubview(stackView)
+    }
 
-        let imageLoader = MovieImageLoader(client: URLSessionHTTPClient(session: .shared))
-        titleLabel.text = item.title
-        subtitleLabel.text = item.releaseDate
-
-        Task {
-            let result = await imageLoader.retrieveImage(from: item.posterPath).result
-
-            switch result {
-            case .success(let response):
-                image.image = UIImage.init(data: response)
-            case .failure(let failure):
-                image.image = nil
+    private func suscribeToState() {
+        guard let viewModel else { return }
+        viewModel.$state.sink { [weak self] state in
+            switch state {
+            case .loading:
+                self?.setSkeletonView()
+            case .idle(data: let data):
+                self?.setImage(from: data)
+            case .placeholder:
+                self?.setPlaceholder()
             }
-        }
+
+        }.store(in: &subscriptions)
+    }
+
+    private func setImage(from data: Data) {
+        image.image = UIImage(data: data)
+    }
+
+    private func setPlaceholder() {
+
+    }
+
+    private func setSkeletonView() {
+
     }
 }

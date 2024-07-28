@@ -11,7 +11,7 @@ final class ImageViewModel {
     private let imageLoader: MovieImageLoaderProtocol
     private var task: Task<Data, Error>?
 
-    var state: State = .loading
+    @Published var state: State = .loading
 
     init(imageLoader: any MovieImageLoaderProtocol) {
         self.imageLoader = imageLoader
