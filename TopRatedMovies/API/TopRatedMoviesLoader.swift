@@ -31,13 +31,12 @@ final class TopRatedMoviesLoader: TopRatedMoviesLoaderProtocol {
             } catch {
                 return .failure(.invalidData)
             }
-        case .failure(let error):
+        case .failure:
             return .failure(.connectivity)
         }
     }
 
     private func generateRequest(with page: Int) -> URLRequest {
-        let urlRequest = URLRequest(url: url)
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         let queryItems: [URLQueryItem] = [
             URLQueryItem(name: "language", value: "en-US"),
