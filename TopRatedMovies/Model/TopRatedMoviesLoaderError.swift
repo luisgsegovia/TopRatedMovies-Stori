@@ -6,6 +6,6 @@
 //
 
 enum TopRatedMoviesLoaderError: Error {
-    case invalid
+    case invalidData
     case connectivity
 }
