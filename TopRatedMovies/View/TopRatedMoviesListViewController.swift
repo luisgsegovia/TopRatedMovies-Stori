@@ -46,9 +46,21 @@ class TopRatedMoviesListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieItemCellView.reuseIdentifier, for: indexPath) as? MovieItemCellView else { return .init() }
         let info = viewModel.items[indexPath.row]
-        cell.configure(with: info)
+        cell.configure(with: info, viewModel: createViewModel())
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.items.count - 1 {
+            viewModel.retrieveNextPage()
+        }
+    }
+
+    private func createViewModel() -> ImageViewModel {
+        let client = URLSessionHTTPClient(session: .init(configuration: .ephemeral))
+        let imageLoader = MovieImageLoader(client: client)
+        return ImageViewModel(imageLoader: imageLoader)
     }
 
 }
