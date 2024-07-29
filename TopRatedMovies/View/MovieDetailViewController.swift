@@ -26,7 +26,7 @@ final class MovieDetailViewController: UIViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.prepareForAutoLayout()
-        label.textColor = Colors.color0
+        label.textColor = Colors.color900
         label.numberOfLines = .zero
         label.font = Fonts.title
         label.text = item.title
@@ -37,7 +37,7 @@ final class MovieDetailViewController: UIViewController {
     private lazy var releaseDateLabel: UILabel = {
         let label = UILabel()
         label.prepareForAutoLayout()
-        label.textColor = Colors.color100
+        label.textColor = Colors.color900
         label.font = Fonts.medium
         label.text = "Release date: \(item.releaseDate)"
 
@@ -47,7 +47,7 @@ final class MovieDetailViewController: UIViewController {
     private lazy var ratingLabel: UILabel = {
         let label = UILabel()
         label.prepareForAutoLayout()
-        label.textColor = Colors.color100
+        label.textColor = Colors.color800
         label.font = Fonts.medium
         label.text = "Rating: \(String(item.voteAverage).formatToOneDecimal())"
         label.textAlignment = .right
@@ -58,7 +58,7 @@ final class MovieDetailViewController: UIViewController {
     private lazy var overviewLabel: UILabel = {
         let label = UILabel()
         label.prepareForAutoLayout()
-        label.textColor = Colors.color100
+        label.textColor = Colors.color800
         label.font = Fonts.subtitle
         label.text = "Overview".uppercased()
 
@@ -140,7 +140,7 @@ final class MovieDetailViewController: UIViewController {
     }
 
     private func setUpUI() {
-        view.backgroundColor = Colors.color900
+        view.backgroundColor = Colors.color200
 
         additionalsStackView.addArrangedSubview(releaseDateLabel)
         additionalsStackView.addArrangedSubview(ratingLabel)
@@ -192,8 +192,6 @@ final class MovieDetailViewController: UIViewController {
         navBar?.standardAppearance = appearance
         navBar?.scrollEdgeAppearance = appearance
     }
-
-    //Hace push a pantalla en negro
 
     private func getImage() {
         viewModel.retrieveImage(from: item.imagePath)

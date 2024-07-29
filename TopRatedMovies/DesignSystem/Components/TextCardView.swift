@@ -11,7 +11,7 @@ final class TextCardView: UIView {
     private lazy var containerView: UIView = {
         let view = UIView()
         view.prepareForAutoLayout()
-        view.backgroundColor = Colors.color800
+        view.backgroundColor = Colors.color300
         view.layer.cornerRadius = 16
 
         return view
@@ -22,7 +22,7 @@ final class TextCardView: UIView {
         label.prepareForAutoLayout()
         label.numberOfLines = .zero
         label.text = text
-        label.textColor = Colors.color100
+        label.textColor = Colors.color800
         label.font = Fonts.medium
 
         return label

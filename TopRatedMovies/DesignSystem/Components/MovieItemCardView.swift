@@ -45,7 +45,7 @@ final class MovieItemCardView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.prepareForAutoLayout()
-        label.textColor = Colors.color0
+        label.textColor = Colors.color900
         label.numberOfLines = .zero
         label.font = Fonts.big
 
@@ -55,7 +55,7 @@ final class MovieItemCardView: UIView {
     private lazy var releaseDateLabel: UILabel = {
         let label = UILabel()
         label.prepareForAutoLayout()
-        label.textColor = Colors.color100
+        label.textColor = Colors.color800
         label.font = Fonts.medium
 
         return label
@@ -64,7 +64,7 @@ final class MovieItemCardView: UIView {
     private lazy var ratingLabel: UILabel = {
         let label = UILabel()
         label.prepareForAutoLayout()
-        label.textColor = Colors.color100
+        label.textColor = Colors.color800
         label.font = Fonts.medium
 
         return label
@@ -73,7 +73,7 @@ final class MovieItemCardView: UIView {
     private lazy var backgroundView: UIView = {
         let view = UIView()
         view.prepareForAutoLayout()
-        view.backgroundColor = Colors.color800
+        view.backgroundColor = Colors.color300
         view.layer.cornerRadius = 16
 
         return view

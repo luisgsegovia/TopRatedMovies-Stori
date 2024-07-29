@@ -35,7 +35,7 @@ final class MovieItemCellView: UITableViewCell {
     }
 
     private func setUpUI() {
-        contentView.backgroundColor = Colors.color900
+        contentView.backgroundColor = Colors.color200
 
         contentView.addSubview(movieCardView)
 
