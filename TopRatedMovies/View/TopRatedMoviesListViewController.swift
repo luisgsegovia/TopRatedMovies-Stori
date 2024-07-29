@@ -26,6 +26,7 @@ class TopRatedMoviesListViewController: UITableViewController {
 
         prepareTableView()
         subscribeToUIState()
+        setUpNavBar()
         viewModel.retrieveMovies()
     }
 
@@ -35,6 +36,24 @@ class TopRatedMoviesListViewController: UITableViewController {
         tableView.register(MovieItemCellView.self, forCellReuseIdentifier: MovieItemCellView.reuseIdentifier)
 
         tableView.backgroundColor = Colors.color900
+    }
+
+    private func setUpNavBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = Colors.color900
+        let navBar = navigationController?.navigationBar
+        navBar?.standardAppearance = appearance
+        navBar?.scrollEdgeAppearance = appearance
+
+        let titleView = UILabel()
+        titleView.prepareForAutoLayout()
+        titleView.text = "Top Rated Movies"
+        titleView.font = UIFont(name: "AmazonEmber-Medium", size: 24)
+        titleView.textColor = Colors.color0
+
+        navigationItem.titleView = titleView
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
