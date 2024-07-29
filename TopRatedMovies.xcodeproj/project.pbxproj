@@ -25,6 +25,7 @@
 		6C321BCB2C560A6B00F8B34B /* TopRatedMoviesListViewController+StateObservance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BCA2C560A6B00F8B34B /* TopRatedMoviesListViewController+StateObservance.swift */; };
 		6C321BCD2C560ECC00F8B34B /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BCC2C560ECC00F8B34B /* ImageViewModel.swift */; };
 		6C321BCF2C570B5200F8B34B /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BCE2C570B5200F8B34B /* UIImageView+Animations.swift */; };
+		6C321BD22C571CDF00F8B34B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BD12C571CDF00F8B34B /* Colors.swift */; };
 		6C4446002C55BEEE00EC814B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */; };
 		6C4446022C55BEEE00EC814B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446012C55BEEE00EC814B /* SceneDelegate.swift */; };
 		6C4446042C55BEEE00EC814B /* TopRatedMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446032C55BEEE00EC814B /* TopRatedMoviesListViewController.swift */; };
@@ -69,6 +70,7 @@
 		6C321BCA2C560A6B00F8B34B /* TopRatedMoviesListViewController+StateObservance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopRatedMoviesListViewController+StateObservance.swift"; sourceTree = "<group>"; };
 		6C321BCC2C560ECC00F8B34B /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		6C321BCE2C570B5200F8B34B /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
+		6C321BD12C571CDF00F8B34B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6C4445FC2C55BEEE00EC814B /* TopRatedMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopRatedMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C4446012C55BEEE00EC814B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		6C321BD02C571CCB00F8B34B /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				6C321BD12C571CDF00F8B34B /* Colors.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		6C4445F32C55BEEE00EC814B = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +228,7 @@
 				6C321BC42C55FAC000F8B34B /* View */,
 				6C321BA22C55C00E00F8B34B /* Model */,
 				6C321BC72C55FB3400F8B34B /* Helpers */,
+				6C321BD02C571CCB00F8B34B /* DesignSystem */,
 				6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */,
 				6C4446012C55BEEE00EC814B /* SceneDelegate.swift */,
 				6C4446082C55BEEF00EC814B /* Assets.xcassets */,
@@ -367,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C321BA42C55C03000F8B34B /* TopRatedMoviesServiceResponse.swift in Sources */,
+				6C321BD22C571CDF00F8B34B /* Colors.swift in Sources */,
 				6C321BAF2C55C62E00F8B34B /* TopRatedMoviesLoaderError.swift in Sources */,
 				6C321BC92C55FB5200F8B34B /* UIView+Extension.swift in Sources */,
 				6C321BAD2C55C30700F8B34B /* MovieItem.swift in Sources */,
