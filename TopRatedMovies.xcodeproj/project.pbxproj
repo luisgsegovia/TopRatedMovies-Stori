@@ -27,6 +27,12 @@
 		6C321BCF2C570B5200F8B34B /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BCE2C570B5200F8B34B /* UIImageView+Animations.swift */; };
 		6C321BD22C571CDF00F8B34B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BD12C571CDF00F8B34B /* Colors.swift */; };
 		6C321BD62C5724D100F8B34B /* MovieItemCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BD52C5724D100F8B34B /* MovieItemCardView.swift */; };
+		6C321BDE2C574D6E00F8B34B /* Amazon-Ember-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C321BD92C574D5C00F8B34B /* Amazon-Ember-Medium.ttf */; };
+		6C321BDF2C574D6E00F8B34B /* AmazonEmber_Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C321BDD2C574D5C00F8B34B /* AmazonEmber_Bd.ttf */; };
+		6C321BE02C574D6E00F8B34B /* AmazonEmber_He.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C321BD82C574D5C00F8B34B /* AmazonEmber_He.ttf */; };
+		6C321BE12C574D6E00F8B34B /* AmazonEmber_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C321BDA2C574D5C00F8B34B /* AmazonEmber_Rg.ttf */; };
+		6C321BE22C574D6E00F8B34B /* AmazonEmber_Lt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C321BDC2C574D5C00F8B34B /* AmazonEmber_Lt.ttf */; };
+		6C321BE32C574D6E00F8B34B /* AmazonEmber_Th.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C321BDB2C574D5C00F8B34B /* AmazonEmber_Th.ttf */; };
 		6C4446002C55BEEE00EC814B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */; };
 		6C4446022C55BEEE00EC814B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446012C55BEEE00EC814B /* SceneDelegate.swift */; };
 		6C4446042C55BEEE00EC814B /* TopRatedMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446032C55BEEE00EC814B /* TopRatedMoviesListViewController.swift */; };
@@ -73,6 +79,12 @@
 		6C321BCE2C570B5200F8B34B /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
 		6C321BD12C571CDF00F8B34B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6C321BD52C5724D100F8B34B /* MovieItemCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemCardView.swift; sourceTree = "<group>"; };
+		6C321BD82C574D5C00F8B34B /* AmazonEmber_He.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonEmber_He.ttf; sourceTree = "<group>"; };
+		6C321BD92C574D5C00F8B34B /* Amazon-Ember-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amazon-Ember-Medium.ttf"; sourceTree = "<group>"; };
+		6C321BDA2C574D5C00F8B34B /* AmazonEmber_Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonEmber_Rg.ttf; sourceTree = "<group>"; };
+		6C321BDB2C574D5C00F8B34B /* AmazonEmber_Th.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonEmber_Th.ttf; sourceTree = "<group>"; };
+		6C321BDC2C574D5C00F8B34B /* AmazonEmber_Lt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonEmber_Lt.ttf; sourceTree = "<group>"; };
+		6C321BDD2C574D5C00F8B34B /* AmazonEmber_Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonEmber_Bd.ttf; sourceTree = "<group>"; };
 		6C4445FC2C55BEEE00EC814B /* TopRatedMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopRatedMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C4446012C55BEEE00EC814B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +232,19 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		6C321BD72C574D4900F8B34B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6C321BD92C574D5C00F8B34B /* Amazon-Ember-Medium.ttf */,
+				6C321BDD2C574D5C00F8B34B /* AmazonEmber_Bd.ttf */,
+				6C321BD82C574D5C00F8B34B /* AmazonEmber_He.ttf */,
+				6C321BDC2C574D5C00F8B34B /* AmazonEmber_Lt.ttf */,
+				6C321BDA2C574D5C00F8B34B /* AmazonEmber_Rg.ttf */,
+				6C321BDB2C574D5C00F8B34B /* AmazonEmber_Th.ttf */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		6C4445F32C55BEEE00EC814B = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +273,7 @@
 				6C321BA22C55C00E00F8B34B /* Model */,
 				6C321BC72C55FB3400F8B34B /* Helpers */,
 				6C321BD02C571CCB00F8B34B /* DesignSystem */,
+				6C321BD72C574D4900F8B34B /* Sources */,
 				6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */,
 				6C4446012C55BEEE00EC814B /* SceneDelegate.swift */,
 				6C4446082C55BEEF00EC814B /* Assets.xcassets */,
@@ -372,6 +398,12 @@
 			files = (
 				6C4446092C55BEEF00EC814B /* Assets.xcassets in Resources */,
 				6C44460C2C55BEEF00EC814B /* Base in Resources */,
+				6C321BDE2C574D6E00F8B34B /* Amazon-Ember-Medium.ttf in Resources */,
+				6C321BDF2C574D6E00F8B34B /* AmazonEmber_Bd.ttf in Resources */,
+				6C321BE02C574D6E00F8B34B /* AmazonEmber_He.ttf in Resources */,
+				6C321BE12C574D6E00F8B34B /* AmazonEmber_Rg.ttf in Resources */,
+				6C321BE22C574D6E00F8B34B /* AmazonEmber_Lt.ttf in Resources */,
+				6C321BE32C574D6E00F8B34B /* AmazonEmber_Th.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
