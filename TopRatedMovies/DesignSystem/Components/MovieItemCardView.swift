@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 final class MovieItemCardView: UIView {
     var title: String? {
@@ -16,13 +17,13 @@ final class MovieItemCardView: UIView {
 
     var releaseDate: String? {
         didSet {
-            releaseDateLabel.text = releaseDate
+            releaseDateLabel.text = "Release date: \(String(describing: releaseDate!))"
         }
     }
 
     var rating: String? {
         didSet {
-            ratingLabel.text = rating
+            ratingLabel.text = "Rating: \(self.format(rating!)) "
         }
     }
 
@@ -36,7 +37,6 @@ final class MovieItemCardView: UIView {
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.prepareForAutoLayout()
-
         imageView.contentMode = .scaleAspectFit
 
         return imageView
@@ -46,7 +46,8 @@ final class MovieItemCardView: UIView {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color0
-
+        label.numberOfLines = .zero
+        label.font = UIFont(name: "AmazonEmber-Bold", size: 20)
 
         return label
     }()
@@ -55,6 +56,7 @@ final class MovieItemCardView: UIView {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color100
+        label.font = UIFont(name: "AmazonEmber-Medium", size: 15)
 
         return label
     }()
@@ -63,6 +65,7 @@ final class MovieItemCardView: UIView {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color100
+        label.font = UIFont(name: "AmazonEmber-Medium", size: 15)
 
         return label
     }()
@@ -112,6 +115,7 @@ final class MovieItemCardView: UIView {
         addSubview(backgroundView)
 
         textStackView.setCustomSpacing(24, after: titleLabel)
+        mainStackView.setCustomSpacing(8, after: imageView)
 
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: mainStackView.heightAnchor, multiplier: 2.0 / 3.0),
@@ -128,5 +132,14 @@ final class MovieItemCardView: UIView {
             backgroundView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
         ])
+    }
+
+    private func format(_ value: String) -> String {
+        guard let number = Double(value) else { return "" }
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 1
+        guard let number =  numberFormatter.string(from: NSNumber(value: number)) else { fatalError("Can not get number") }
+        return number
     }
 }
