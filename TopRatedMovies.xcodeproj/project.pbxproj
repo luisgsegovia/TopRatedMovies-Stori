@@ -198,8 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				6C4446032C55BEEE00EC814B /* TopRatedMoviesListViewController.swift */,
-				6C321BC52C55FB0500F8B34B /* MovieItemCellView.swift */,
 				6C321BCA2C560A6B00F8B34B /* TopRatedMoviesListViewController+StateObservance.swift */,
+				6C321BC52C55FB0500F8B34B /* MovieItemCellView.swift */,
 				6C321BE62C575BF500F8B34B /* MovieDetailViewController.swift */,
 			);
 			path = View;

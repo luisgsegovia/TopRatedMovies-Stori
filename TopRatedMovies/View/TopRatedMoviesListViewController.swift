@@ -12,6 +12,15 @@ class TopRatedMoviesListViewController: UITableViewController {
     let viewModel: TopRatedMoviesViewModel
     var subscriptions: Set<AnyCancellable> = .init()
 
+    lazy var spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.prepareForAutoLayout()
+        spinner.color = Colors.color0
+        spinner.hidesWhenStopped = true
+
+        return spinner
+    }()
+
     init(viewModel: TopRatedMoviesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -27,6 +36,7 @@ class TopRatedMoviesListViewController: UITableViewController {
         prepareTableView()
         subscribeToUIState()
         setUpNavBar()
+        setUpUI()
         viewModel.retrieveMovies()
     }
 
@@ -54,6 +64,15 @@ class TopRatedMoviesListViewController: UITableViewController {
 
         navigationItem.titleView = titleView
 
+    }
+
+    private func setUpUI() {
+        tableView.addSubview(spinner)
+
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+        ])
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

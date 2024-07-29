@@ -15,14 +15,14 @@ extension TopRatedMoviesListViewController {
 
             switch state {
             case .loading:
-                break
+                spinner.startAnimating()
             case .idle:
                 DispatchQueue.main.async {
+                    self.spinner.stopAnimating()
                     self.tableView.reloadData()
                 }
-
             case .error:
-                break
+                spinner.stopAnimating()
             }
         }.store(in: &subscriptions)
     }
