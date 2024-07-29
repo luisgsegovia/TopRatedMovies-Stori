@@ -121,6 +121,13 @@ final class MovieDetailViewController: UIViewController {
         return view
     }()
 
+    private lazy var favoriteButton: PrimaryButton = {
+        let button = PrimaryButton(title: " Add to favorites")
+        button.prepareForAutoLayout()
+
+        return button
+    }()
+
     init(viewModel: ImageViewModel, item: MovieItem) {
         self.viewModel = viewModel
         self.item = item
@@ -142,6 +149,7 @@ final class MovieDetailViewController: UIViewController {
     private func setUpUI() {
         view.backgroundColor = Colors.color200
 
+
         additionalsStackView.addArrangedSubview(releaseDateLabel)
         additionalsStackView.addArrangedSubview(ratingLabel)
         descriptionStackView.addArrangedSubview(titleLabel)
@@ -149,6 +157,7 @@ final class MovieDetailViewController: UIViewController {
 
         mainStackView.addArrangedSubview(descriptionStackView)
         mainStackView.addArrangedSubview(overviewStackView)
+        mainStackView.addArrangedSubview(favoriteButton)
 
         overviewStackView.addArrangedSubview(overviewLabel)
         overviewStackView.addArrangedSubview(textCardView)
@@ -160,6 +169,7 @@ final class MovieDetailViewController: UIViewController {
         view.addSubview(scrollView)
 
         mainStackView.setCustomSpacing(16, after: descriptionStackView)
+        mainStackView.setCustomSpacing(16, after: overviewStackView)
 
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
@@ -171,6 +181,8 @@ final class MovieDetailViewController: UIViewController {
             mainStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             mainStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             mainStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
+
+            favoriteButton.heightAnchor.constraint(equalToConstant: 48),
 
             containerView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             containerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
