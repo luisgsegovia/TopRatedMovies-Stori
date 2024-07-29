@@ -33,6 +33,8 @@ class TopRatedMoviesListViewController: UITableViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(MovieItemCellView.self, forCellReuseIdentifier: MovieItemCellView.reuseIdentifier)
+
+        tableView.backgroundColor = Colors.color900
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

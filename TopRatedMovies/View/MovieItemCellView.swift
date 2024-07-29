@@ -14,43 +14,11 @@ final class MovieItemCellView: UITableViewCell {
 
     static let reuseIdentifier = "MovieItemCellView"
 
-    private lazy var image: UIImageView = {
-        let imageView = UIImageView()
-        imageView.prepareForAutoLayout()
+    private lazy var movieCardView: MovieItemCardView = {
+        let cardView = MovieItemCardView()
+        cardView.prepareForAutoLayout()
 
-        imageView.contentMode = .scaleAspectFit
-
-        return imageView
-    }()
-
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.prepareForAutoLayout()
-
-        return label
-    }()
-
-    private lazy var subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.prepareForAutoLayout()
-
-        return label
-    }()
-
-    private lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.prepareForAutoLayout()
-
-        return stackView
-    }()
-
-    private lazy var textStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.prepareForAutoLayout()
-        stackView.axis = .vertical
-        stackView.alignment = .leading
-
-        return stackView
+        return cardView
     }()
 
     func configure(with item: MovieItem, viewModel: ImageViewModel) {
@@ -59,27 +27,23 @@ final class MovieItemCellView: UITableViewCell {
         setUpUI()
         suscribeToState()
 
-        titleLabel.text = item.title
-        subtitleLabel.text = item.releaseDate
+        movieCardView.title = item.title
+        movieCardView.releaseDate = item.releaseDate
+        movieCardView.rating = String(item.voteAverage)
 
         viewModel.retrieveImage(from: item.posterPath)
     }
 
     private func setUpUI() {
-        textStackView.addArrangedSubview(titleLabel)
-        textStackView.addArrangedSubview(subtitleLabel)
-        stackView.addArrangedSubview(image)
-        stackView.addArrangedSubview(textStackView)
-        contentView.addSubview(stackView)
+        contentView.backgroundColor = Colors.color900
+
+        contentView.addSubview(movieCardView)
 
         NSLayoutConstraint.activate([
-            image.widthAnchor.constraint(equalTo: image.heightAnchor, multiplier: 2.0 / 3.0),
-            image.widthAnchor.constraint(equalToConstant: 100),
-
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            movieCardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            movieCardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            movieCardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            movieCardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
     }
 
@@ -100,7 +64,7 @@ final class MovieItemCellView: UITableViewCell {
 
     private func setImage(from data: Data) {
         DispatchQueue.main.async {
-            self.image.image = UIImage(data: data)
+            self.movieCardView.image = UIImage(data: data)
         }
     }
 
@@ -109,6 +73,6 @@ final class MovieItemCellView: UITableViewCell {
     }
 
     private func setSkeletonView() {
-        image.setImageAnimated(UIImage())
+        movieCardView.imageView.setImageAnimated(UIImage())
     }
 }
