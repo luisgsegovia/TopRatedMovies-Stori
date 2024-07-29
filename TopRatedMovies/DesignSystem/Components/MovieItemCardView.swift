@@ -47,7 +47,7 @@ final class MovieItemCardView: UIView {
         label.prepareForAutoLayout()
         label.textColor = Colors.color0
         label.numberOfLines = .zero
-        label.font = UIFont(name: "AmazonEmber-Bold", size: 20)
+        label.font = Fonts.big
 
         return label
     }()
@@ -56,7 +56,7 @@ final class MovieItemCardView: UIView {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color100
-        label.font = UIFont(name: "AmazonEmber-Medium", size: 15)
+        label.font = Fonts.medium
 
         return label
     }()
@@ -65,7 +65,7 @@ final class MovieItemCardView: UIView {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color100
-        label.font = UIFont(name: "AmazonEmber-Medium", size: 15)
+        label.font = Fonts.medium
 
         return label
     }()

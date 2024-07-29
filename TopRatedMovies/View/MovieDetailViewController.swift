@@ -28,7 +28,7 @@ final class MovieDetailViewController: UIViewController {
         label.prepareForAutoLayout()
         label.textColor = Colors.color0
         label.numberOfLines = .zero
-        label.font = UIFont(name: "AmazonEmber-Bold", size: 24)
+        label.font = Fonts.title
         label.text = item.title
 
         return label
@@ -38,7 +38,7 @@ final class MovieDetailViewController: UIViewController {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color100
-        label.font = UIFont(name: "AmazonEmber-Medium", size: 15)
+        label.font = Fonts.medium
         label.text = "Release date: \(item.releaseDate)"
 
         return label
@@ -48,7 +48,7 @@ final class MovieDetailViewController: UIViewController {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color100
-        label.font = UIFont(name: "AmazonEmber-Medium", size: 15)
+        label.font = Fonts.medium
         label.text = "Rating: \(String(item.voteAverage).formatToOneDecimal())"
         label.textAlignment = .right
 
@@ -59,7 +59,7 @@ final class MovieDetailViewController: UIViewController {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color100
-        label.font = UIFont(name: "AmazonEmber-Medium", size: 12)
+        label.font = Fonts.subtitle
         label.text = "Overview".uppercased()
 
         return label

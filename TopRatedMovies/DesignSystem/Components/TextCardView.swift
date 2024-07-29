@@ -23,7 +23,7 @@ final class TextCardView: UIView {
         label.numberOfLines = .zero
         label.text = text
         label.textColor = Colors.color100
-        label.font = UIFont(name: "AmazonEmber-Medium", size: 15)
+        label.font = Fonts.medium
 
         return label
     }()
