@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 final class MovieItemCellView: UITableViewCell {
-    private var viewModel: ImageViewModel?
+    private(set) var viewModel: ImageViewModel?
     private var subscriptions: Set<AnyCancellable> = .init()
 
     static let reuseIdentifier = "MovieItemCellView"
@@ -74,5 +74,11 @@ final class MovieItemCellView: UITableViewCell {
 
     private func setSkeletonView() {
         movieCardView.imageView.setImageAnimated(UIImage())
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        movieCardView.image = nil
+        viewModel?.cancel()
     }
 }

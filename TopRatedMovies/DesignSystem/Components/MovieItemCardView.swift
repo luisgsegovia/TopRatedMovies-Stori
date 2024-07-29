@@ -23,7 +23,7 @@ final class MovieItemCardView: UIView {
 
     var rating: String? {
         didSet {
-            ratingLabel.text = "Rating: \(self.format(rating!)) "
+            ratingLabel.text = "Rating: \(rating!.formatToOneDecimal()) "
         }
     }
 

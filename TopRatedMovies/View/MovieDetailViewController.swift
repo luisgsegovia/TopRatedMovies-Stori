@@ -38,8 +38,8 @@ final class MovieDetailViewController: UIViewController {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color100
-        label.font = UIFont(name: "AmazonEmber-Medium", size: 18)
-        label.text = item.releaseDate
+        label.font = UIFont(name: "AmazonEmber-Medium", size: 15)
+        label.text = "Release date: \(item.releaseDate)"
 
         return label
     }()
@@ -48,8 +48,19 @@ final class MovieDetailViewController: UIViewController {
         let label = UILabel()
         label.prepareForAutoLayout()
         label.textColor = Colors.color100
-        label.font = UIFont(name: "AmazonEmber-Medium", size: 18)
-        label.text = String(item.voteAverage)
+        label.font = UIFont(name: "AmazonEmber-Medium", size: 15)
+        label.text = "Rating: \(String(item.voteAverage).formatToOneDecimal())"
+        label.textAlignment = .right
+
+        return label
+    }()
+
+    private lazy var overviewLabel: UILabel = {
+        let label = UILabel()
+        label.prepareForAutoLayout()
+        label.textColor = Colors.color100
+        label.font = UIFont(name: "AmazonEmber-Medium", size: 12)
+        label.text = "Overview".uppercased()
 
         return label
     }()
@@ -66,6 +77,7 @@ final class MovieDetailViewController: UIViewController {
         let stackView = UIStackView()
         stackView.prepareForAutoLayout()
         stackView.axis = .vertical
+        stackView.spacing = 8
 
         return stackView
     }()
@@ -73,6 +85,15 @@ final class MovieDetailViewController: UIViewController {
     private lazy var additionalsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.prepareForAutoLayout()
+
+        return stackView
+    }()
+
+    private lazy var overviewStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.prepareForAutoLayout()
+        stackView.axis = .vertical
+        stackView.spacing = 4
 
         return stackView
     }()
@@ -125,14 +146,20 @@ final class MovieDetailViewController: UIViewController {
         additionalsStackView.addArrangedSubview(ratingLabel)
         descriptionStackView.addArrangedSubview(titleLabel)
         descriptionStackView.addArrangedSubview(additionalsStackView)
+
         mainStackView.addArrangedSubview(descriptionStackView)
-        mainStackView.addArrangedSubview(textCardView)
+        mainStackView.addArrangedSubview(overviewStackView)
+
+        overviewStackView.addArrangedSubview(overviewLabel)
+        overviewStackView.addArrangedSubview(textCardView)
 
         containerView.addSubview(imageView)
         containerView.addSubview(mainStackView)
         scrollView.addSubview(containerView)
 
         view.addSubview(scrollView)
+
+        mainStackView.setCustomSpacing(16, after: descriptionStackView)
 
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
