@@ -53,6 +53,12 @@ class TopRatedMoviesListViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = viewModel.items[indexPath.row]
+        let viewController = MovieDetailViewController(viewModel: createViewModel(), item: item)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == viewModel.items.count - 1 {
             viewModel.retrieveNextPage()
