@@ -98,6 +98,15 @@ final class MovieDetailViewController: UIViewController {
         return stackView
     }()
 
+    private lazy var buttonStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [favoriteButton])
+        stackView.prepareForAutoLayout()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+
+        return stackView
+    }()
+
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.prepareForAutoLayout()
@@ -149,7 +158,6 @@ final class MovieDetailViewController: UIViewController {
     private func setUpUI() {
         view.backgroundColor = Colors.color200
 
-
         additionalsStackView.addArrangedSubview(releaseDateLabel)
         additionalsStackView.addArrangedSubview(ratingLabel)
         descriptionStackView.addArrangedSubview(titleLabel)
@@ -157,7 +165,7 @@ final class MovieDetailViewController: UIViewController {
 
         mainStackView.addArrangedSubview(descriptionStackView)
         mainStackView.addArrangedSubview(overviewStackView)
-        mainStackView.addArrangedSubview(favoriteButton)
+        mainStackView.addArrangedSubview(buttonStackView)
 
         overviewStackView.addArrangedSubview(overviewLabel)
         overviewStackView.addArrangedSubview(textCardView)
@@ -183,6 +191,7 @@ final class MovieDetailViewController: UIViewController {
             mainStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
 
             favoriteButton.heightAnchor.constraint(equalToConstant: 48),
+            favoriteButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.5),
 
             containerView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             containerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),

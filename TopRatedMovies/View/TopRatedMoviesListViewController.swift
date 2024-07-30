@@ -46,7 +46,7 @@ class TopRatedMoviesListViewController: UITableViewController {
         tableView.delegate = self
         tableView.register(MovieItemCellView.self, forCellReuseIdentifier: MovieItemCellView.reuseIdentifier)
 
-        tableView.backgroundColor = Colors.color100
+        tableView.backgroundColor = Colors.color200
     }
 
     private func setUpNavBar() {
