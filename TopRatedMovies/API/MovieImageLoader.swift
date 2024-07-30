@@ -21,7 +21,7 @@ final class MovieImageLoader: MovieImageLoaderProtocol {
 
     struct InvalidDataRepresentation: Error {}
 
-    func retrieveImage(from path: String) async -> Task<Data, any Error> {
+    func retrieveImage(from path: String) async -> Task<Data, Error> {
         let request = generateRequest(with: path)
 
         return Task {

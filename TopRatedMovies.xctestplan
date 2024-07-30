@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "7CA9B48C-7267-4007-B6C3-CE752012A864",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:TopRatedMovies.xcodeproj",
+      "identifier" : "6C4445FB2C55BEEE00EC814B",
+      "name" : "TopRatedMovies"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:TopRatedMovies.xcodeproj",
+        "identifier" : "6C4446112C55BEEF00EC814B",
+        "name" : "TopRatedMoviesTests"
+      }
+    }
+  ],
+  "version" : 1
+}
