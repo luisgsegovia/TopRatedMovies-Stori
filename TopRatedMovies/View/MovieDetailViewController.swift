@@ -202,8 +202,9 @@ final class MovieDetailViewController: UIViewController {
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-
         ])
+
+        favoriteButton.addTarget(self, action: #selector(showModalView), for: .touchUpInside)
     }
 
     private func setUpNavBar() {
@@ -244,5 +245,11 @@ final class MovieDetailViewController: UIViewController {
 
     private func setSkeletonView() {
         imageView.setImageAnimated(UIImage())
+    }
+
+    @objc private func showModalView() {
+        let modalView = ModalPresentationViewController()
+        modalView.modalPresentationStyle = .overFullScreen
+        present(modalView, animated: true)
     }
 }
