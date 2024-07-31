@@ -50,6 +50,7 @@ final class MovieItemCardView: UIView {
     lazy var imageViewContainer: UIView = {
         let view = UIView()
         view.prepareForAutoLayout()
+        view.backgroundColor = Colors.color300
 
         return view
     }()

@@ -27,7 +27,7 @@ final class ImageViewModel {
             switch result {
             case .success(let data):
                 state = .idle(data: data)
-            case .failure(let failure):
+            case .failure:
                 state = .placeholder
             }
         }

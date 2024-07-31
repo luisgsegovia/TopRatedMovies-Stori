@@ -20,6 +20,7 @@ final class MovieDetailViewController: UIViewController {
         imageView.heightAnchor.constraint(equalToConstant: 300)
             .isActive = true
         imageView.isShimmering = true
+        imageView.backgroundColor = Colors.color400
 
         return imageView
     }()

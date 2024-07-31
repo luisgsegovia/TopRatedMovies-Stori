@@ -40,7 +40,7 @@ final class TopRatedMoviesViewModel {
             switch result {
             case .success(let response):
                 handleSucces(with: response)
-            case .failure(let failure):
+            case .failure:
                 handleError()
             }
         }
