@@ -31,7 +31,12 @@ final class MovieItemCardView: UIView {
         didSet {
             imageView.image = image
         }
+    }
 
+    var _isShimmering: Bool = false {
+        didSet {
+            imageView.isShimmering = _isShimmering
+        }
     }
 
     lazy var imageView: UIImageView = {
@@ -40,6 +45,13 @@ final class MovieItemCardView: UIView {
         imageView.contentMode = .scaleAspectFit
 
         return imageView
+    }()
+
+    lazy var imageViewContainer: UIView = {
+        let view = UIView()
+        view.prepareForAutoLayout()
+
+        return view
     }()
 
     private lazy var titleLabel: UILabel = {
@@ -106,10 +118,11 @@ final class MovieItemCardView: UIView {
     }
     
     private func setUpUI() {
+        imageViewContainer.addSubview(imageView)
         textStackView.addArrangedSubview(titleLabel)
         textStackView.addArrangedSubview(releaseDateLabel)
         textStackView.addArrangedSubview(ratingLabel)
-        mainStackView.addArrangedSubview(imageView)
+        mainStackView.addArrangedSubview(imageViewContainer)
         mainStackView.addArrangedSubview(textStackView)
         backgroundView.addSubview(mainStackView)
         addSubview(backgroundView)
@@ -118,9 +131,14 @@ final class MovieItemCardView: UIView {
         mainStackView.setCustomSpacing(8, after: imageView)
 
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalTo: mainStackView.heightAnchor, multiplier: 2.0 / 3.0),
-            imageView.widthAnchor.constraint(equalToConstant: 100),
-            imageView.bottomAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: -8), //
+            imageViewContainer.widthAnchor.constraint(equalTo: mainStackView.heightAnchor, multiplier: 2.0 / 3.0),
+            imageViewContainer.widthAnchor.constraint(equalToConstant: 100),
+            imageViewContainer.bottomAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: -8),
+
+            imageView.leadingAnchor.constraint(equalTo: imageViewContainer.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: imageViewContainer.trailingAnchor),
+            imageView.topAnchor.constraint(equalTo: imageViewContainer.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: imageViewContainer.bottomAnchor),
 
             mainStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor),
@@ -132,14 +150,5 @@ final class MovieItemCardView: UIView {
             backgroundView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
         ])
-    }
-
-    private func format(_ value: String) -> String {
-        guard let number = Double(value) else { return "" }
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 1
-        guard let number =  numberFormatter.string(from: NSNumber(value: number)) else { fatalError("Can not get number") }
-        return number
     }
 }

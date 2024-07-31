@@ -17,6 +17,7 @@ final class MovieItemCellView: UITableViewCell {
     private lazy var movieCardView: MovieItemCardView = {
         let cardView = MovieItemCardView()
         cardView.prepareForAutoLayout()
+        cardView._isShimmering = true
 
         return cardView
     }()
@@ -52,11 +53,14 @@ final class MovieItemCellView: UITableViewCell {
         viewModel.$state.sink { [weak self] state in
             switch state {
             case .loading:
-                self?.setSkeletonView()
+                self?.setShimmering(to: true)
             case .idle(data: let data):
+                self?.setShimmering(to: false)
                 self?.setImage(from: data)
             case .placeholder:
+                self?.setShimmering(to: true)
                 self?.setPlaceholder()
+
             }
 
         }.store(in: &subscriptions)
@@ -64,16 +68,19 @@ final class MovieItemCellView: UITableViewCell {
 
     private func setImage(from data: Data) {
         DispatchQueue.main.async {
-            self.movieCardView.image = UIImage(data: data)
+            let image = UIImage(data: data)
+            self.movieCardView.imageView.setImageAnimated(image)
         }
     }
 
     private func setPlaceholder() {
-
+        setShimmering(to: false)
     }
 
-    private func setSkeletonView() {
-        movieCardView.imageView.setImageAnimated(UIImage())
+    private func setShimmering(to value: Bool) {
+        DispatchQueue.main.async {
+            self.movieCardView._isShimmering = value
+        }
     }
 
     override func prepareForReuse() {

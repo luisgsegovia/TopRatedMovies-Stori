@@ -19,6 +19,7 @@ final class MovieDetailViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.heightAnchor.constraint(equalToConstant: 300)
             .isActive = true
+        imageView.isShimmering = true
 
         return imageView
     }()
@@ -223,10 +224,12 @@ final class MovieDetailViewController: UIViewController {
         viewModel.$state.sink { [weak self] state in
             switch state {
             case .loading:
-                self?.setSkeletonView()
+                self?.setShimmering(to: true)
             case .idle(data: let data):
+                self?.setShimmering(to: false)
                 self?.setImage(from: data)
             case .placeholder:
+                self?.setShimmering(to: false)
                 self?.setPlaceholder()
             }
 
@@ -235,7 +238,7 @@ final class MovieDetailViewController: UIViewController {
 
     private func setImage(from data: Data) {
         DispatchQueue.main.async {
-            self.imageView.image = UIImage(data: data)
+            self.imageView.setImageAnimated(UIImage(data: data))
         }
     }
 
@@ -243,8 +246,10 @@ final class MovieDetailViewController: UIViewController {
 
     }
 
-    private func setSkeletonView() {
-        imageView.setImageAnimated(UIImage())
+    private func setShimmering(to value: Bool) {
+        DispatchQueue.main.async {
+            self.imageView.isShimmering = value
+        }
     }
 
     @objc private func showModalView() {
