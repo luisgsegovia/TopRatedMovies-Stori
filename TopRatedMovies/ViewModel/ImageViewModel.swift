@@ -18,6 +18,7 @@ final class ImageViewModel {
     }
 
     func retrieveImage(from path: String) {
+        state = .loading
         Task {
             let task = await imageLoader.retrieveImage(from: path)
             self.task = task
