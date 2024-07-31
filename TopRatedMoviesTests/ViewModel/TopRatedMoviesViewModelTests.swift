@@ -59,6 +59,19 @@ final class TopRatedMoviesViewModelTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
+    func testRetrieveMoviesNextPageAndThereAreMorePagesButReturnsError() {
+        let sut = makeSUT(withResult: .failure(.invalidData), pagination: .init(canLoadMore: true))
+        let exp = expectation(description: "Waiting for expectation to finish")
+
+        match(paginationStates: [.loading, .error], sut: sut) {
+            exp.fulfill()
+        }
+
+        sut.retrieveNextPage()
+
+        wait(for: [exp], timeout: 1)
+    }
+
     func testRetrieveMoviesNextPageButThereAreNoMorePages() {
         let sut = makeSUT(withResult: .success(createMovieItems()), pagination: .init(canLoadMore: false))
 

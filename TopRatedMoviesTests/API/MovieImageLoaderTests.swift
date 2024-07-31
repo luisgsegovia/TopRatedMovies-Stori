@@ -30,7 +30,7 @@ final class MovieImageLoaderTests: XCTestCase {
             let result = await sut.retrieveImage(from: "").result
             
             switch result {
-            case .success(let success):
+            case .success:
                 XCTFail("Expected an error")
             case .failure(let receivedError):
                 XCTAssertEqual(receivedError as NSError, error)

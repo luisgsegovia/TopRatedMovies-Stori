@@ -13,11 +13,11 @@
       "containerPath" : "container:TopRatedMovies.xcodeproj",
       "identifier" : "6C4445FB2C55BEEE00EC814B",
       "name" : "TopRatedMovies"
-    }
+    },
+    "testExecutionOrdering" : "random"
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:TopRatedMovies.xcodeproj",
         "identifier" : "6C4446112C55BEEF00EC814B",

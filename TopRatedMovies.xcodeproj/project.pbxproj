@@ -47,7 +47,6 @@
 		6C4446042C55BEEE00EC814B /* TopRatedMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446032C55BEEE00EC814B /* TopRatedMoviesListViewController.swift */; };
 		6C4446092C55BEEF00EC814B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C4446082C55BEEF00EC814B /* Assets.xcassets */; };
 		6C44460C2C55BEEF00EC814B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6C44460B2C55BEEF00EC814B /* Base */; };
-		6C4446172C55BEEF00EC814B /* TopRatedMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446162C55BEEF00EC814B /* TopRatedMoviesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +104,6 @@
 		6C44460B2C55BEEF00EC814B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C44460D2C55BEEF00EC814B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C4446122C55BEEF00EC814B /* TopRatedMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopRatedMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C4446162C55BEEF00EC814B /* TopRatedMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,7 +306,6 @@
 			children = (
 				6C321BF72C59AADE00F8B34B /* ViewModel */,
 				6C321BB62C55D0F100F8B34B /* API */,
-				6C4446162C55BEEF00EC814B /* TopRatedMoviesTests.swift */,
 			);
 			path = TopRatedMoviesTests;
 			sourceTree = "<group>";
@@ -457,7 +454,6 @@
 				6C321BB82C55D14B00F8B34B /* TopRatedMoviesLoaderTests.swift in Sources */,
 				6C321BBB2C55D1D900F8B34B /* HTTPClientSpy.swift in Sources */,
 				6C321BF92C59AAEE00F8B34B /* TopRatedMoviesViewModelTests.swift in Sources */,
-				6C4446172C55BEEF00EC814B /* TopRatedMoviesTests.swift in Sources */,
 				6C321BF62C59A75800F8B34B /* MovieImageLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

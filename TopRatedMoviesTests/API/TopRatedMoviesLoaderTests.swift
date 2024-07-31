@@ -22,7 +22,6 @@ final class TopRatedMoviesLoaderTests: XCTestCase {
     func testServiceReturnsDataIncorrectly() async {
         let (sut, client) = makeSUT()
         client.complete(withStatusCode: 200, data: makeResponse())
-        let jsonData = "".data(using: .utf8)
 
         Task {
             let result = await sut.retrieveMovies(page: 1)
