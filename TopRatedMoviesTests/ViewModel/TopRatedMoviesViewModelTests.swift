@@ -119,17 +119,3 @@ final class TopRatedMoviesViewModelTests: XCTestCase {
             .store(in: &subscriptions)
     }
 }
-
-class TopRatedMoviesLoaderMock: TopRatedMoviesLoaderProtocol {
-    private let result: Result<TopRatedMovies.MovieItems, TopRatedMovies.TopRatedMoviesLoaderError>
-    
-    init(result: Result<TopRatedMovies.MovieItems, TopRatedMovies.TopRatedMoviesLoaderError>) {
-        self.result = result
-    }
-
-    func retrieveMovies(page: Int) async -> Result<TopRatedMovies.MovieItems, TopRatedMovies.TopRatedMoviesLoaderError> {
-        return result
-    }
-    
-
-}
