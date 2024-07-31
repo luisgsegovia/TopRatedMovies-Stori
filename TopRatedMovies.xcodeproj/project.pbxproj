@@ -41,6 +41,7 @@
 		6C321BF12C5893C600F8B34B /* BasicModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BF02C5893C500F8B34B /* BasicModalView.swift */; };
 		6C321BF32C58971C00F8B34B /* ModalPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BF22C58971C00F8B34B /* ModalPresentationViewController.swift */; };
 		6C321BF62C59A75800F8B34B /* MovieImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BF52C59A75800F8B34B /* MovieImageLoaderTests.swift */; };
+		6C321BF92C59AAEE00F8B34B /* TopRatedMoviesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BF82C59AAEE00F8B34B /* TopRatedMoviesViewModelTests.swift */; };
 		6C4446002C55BEEE00EC814B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */; };
 		6C4446022C55BEEE00EC814B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446012C55BEEE00EC814B /* SceneDelegate.swift */; };
 		6C4446042C55BEEE00EC814B /* TopRatedMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446032C55BEEE00EC814B /* TopRatedMoviesListViewController.swift */; };
@@ -51,13 +52,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		6C4446132C55BEEF00EC814B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6C4445F42C55BEEE00EC814B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6C4445FB2C55BEEE00EC814B;
-			remoteInfo = TopRatedMovies;
-		};
-		6C44461D2C55BEEF00EC814B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6C4445F42C55BEEE00EC814B /* Project object */;
 			proxyType = 1;
@@ -102,6 +96,7 @@
 		6C321BF22C58971C00F8B34B /* ModalPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationViewController.swift; sourceTree = "<group>"; };
 		6C321BF42C59A45F00F8B34B /* TopRatedMovies.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TopRatedMovies.xctestplan; sourceTree = "<group>"; };
 		6C321BF52C59A75800F8B34B /* MovieImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageLoaderTests.swift; sourceTree = "<group>"; };
+		6C321BF82C59AAEE00F8B34B /* TopRatedMoviesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesViewModelTests.swift; sourceTree = "<group>"; };
 		6C4445FC2C55BEEE00EC814B /* TopRatedMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopRatedMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C4446012C55BEEE00EC814B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +106,6 @@
 		6C44460D2C55BEEF00EC814B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C4446122C55BEEF00EC814B /* TopRatedMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopRatedMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4446162C55BEEF00EC814B /* TopRatedMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesTests.swift; sourceTree = "<group>"; };
-		6C44461C2C55BEEF00EC814B /* TopRatedMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopRatedMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,13 +117,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6C44460F2C55BEEF00EC814B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6C4446192C55BEEF00EC814B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,6 +257,14 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		6C321BF72C59AADE00F8B34B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6C321BF82C59AAEE00F8B34B /* TopRatedMoviesViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6C4445F32C55BEEE00EC814B = {
 			isa = PBXGroup;
 			children = (
@@ -285,7 +280,6 @@
 			children = (
 				6C4445FC2C55BEEE00EC814B /* TopRatedMovies.app */,
 				6C4446122C55BEEF00EC814B /* TopRatedMoviesTests.xctest */,
-				6C44461C2C55BEEF00EC814B /* TopRatedMoviesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,6 +306,7 @@
 		6C4446152C55BEEF00EC814B /* TopRatedMoviesTests */ = {
 			isa = PBXGroup;
 			children = (
+				6C321BF72C59AADE00F8B34B /* ViewModel */,
 				6C321BB62C55D0F100F8B34B /* API */,
 				6C4446162C55BEEF00EC814B /* TopRatedMoviesTests.swift */,
 			);
@@ -356,24 +351,6 @@
 			productReference = 6C4446122C55BEEF00EC814B /* TopRatedMoviesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6C44461B2C55BEEF00EC814B /* TopRatedMoviesUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6C44462C2C55BEEF00EC814B /* Build configuration list for PBXNativeTarget "TopRatedMoviesUITests" */;
-			buildPhases = (
-				6C4446182C55BEEF00EC814B /* Sources */,
-				6C4446192C55BEEF00EC814B /* Frameworks */,
-				6C44461A2C55BEEF00EC814B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6C44461E2C55BEEF00EC814B /* PBXTargetDependency */,
-			);
-			name = TopRatedMoviesUITests;
-			productName = TopRatedMoviesUITests;
-			productReference = 6C44461C2C55BEEF00EC814B /* TopRatedMoviesUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -388,10 +365,6 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					6C4446112C55BEEF00EC814B = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 6C4445FB2C55BEEE00EC814B;
-					};
-					6C44461B2C55BEEF00EC814B = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 6C4445FB2C55BEEE00EC814B;
 					};
@@ -412,7 +385,6 @@
 			targets = (
 				6C4445FB2C55BEEE00EC814B /* TopRatedMovies */,
 				6C4446112C55BEEF00EC814B /* TopRatedMoviesTests */,
-				6C44461B2C55BEEF00EC814B /* TopRatedMoviesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -434,13 +406,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6C4446102C55BEEF00EC814B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6C44461A2C55BEEF00EC814B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,15 +456,9 @@
 			files = (
 				6C321BB82C55D14B00F8B34B /* TopRatedMoviesLoaderTests.swift in Sources */,
 				6C321BBB2C55D1D900F8B34B /* HTTPClientSpy.swift in Sources */,
+				6C321BF92C59AAEE00F8B34B /* TopRatedMoviesViewModelTests.swift in Sources */,
 				6C4446172C55BEEF00EC814B /* TopRatedMoviesTests.swift in Sources */,
 				6C321BF62C59A75800F8B34B /* MovieImageLoaderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6C4446182C55BEEF00EC814B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,11 +469,6 @@
 			isa = PBXTargetDependency;
 			target = 6C4445FB2C55BEEE00EC814B /* TopRatedMovies */;
 			targetProxy = 6C4446132C55BEEF00EC814B /* PBXContainerItemProxy */;
-		};
-		6C44461E2C55BEEF00EC814B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6C4445FB2C55BEEE00EC814B /* TopRatedMovies */;
-			targetProxy = 6C44461D2C55BEEF00EC814B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -749,40 +703,6 @@
 			};
 			name = Release;
 		};
-		6C44462D2C55BEEF00EC814B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.luissegovia.TopRatedMoviesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TopRatedMovies;
-			};
-			name = Debug;
-		};
-		6C44462E2C55BEEF00EC814B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.luissegovia.TopRatedMoviesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TopRatedMovies;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -809,15 +729,6 @@
 			buildConfigurations = (
 				6C44462A2C55BEEF00EC814B /* Debug */,
 				6C44462B2C55BEEF00EC814B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6C44462C2C55BEEF00EC814B /* Build configuration list for PBXNativeTarget "TopRatedMoviesUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6C44462D2C55BEEF00EC814B /* Debug */,
-				6C44462E2C55BEEF00EC814B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

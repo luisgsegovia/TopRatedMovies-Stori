@@ -20,6 +20,12 @@ final class TopRatedMoviesViewModel {
         self.moviesLoader = moviesLoader
     }
 
+    // For Testing purposes
+    init(moviesLoader: TopRatedMoviesLoaderProtocol, pagination: PaginationData = .init()) {
+        self.moviesLoader = moviesLoader
+        self.pagination = pagination
+    }
+
     func retrieveMovies() {
         uiState = .loading
         retrieveNextPage()
