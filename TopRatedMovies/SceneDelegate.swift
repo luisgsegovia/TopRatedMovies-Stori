@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewModel = TopRatedMoviesViewModel(moviesLoader: moviesLoader)
         let viewController = TopRatedMoviesListViewController(viewModel: viewModel)
         let navigation = UINavigationController(rootViewController: viewController)
+        UINavigationBar.appearance().tintColor = Colors.color900
         window.rootViewController = navigation
         self.window = window
         window.makeKeyAndVisible()
