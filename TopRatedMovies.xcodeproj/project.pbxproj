@@ -46,6 +46,7 @@
 		6C321BFE2C59DEBA00F8B34B /* TopRatedMoviesLoaderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BFD2C59DEBA00F8B34B /* TopRatedMoviesLoaderMock.swift */; };
 		6C321C002C59DEEC00F8B34B /* MovieImageLoaderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321BFF2C59DEEC00F8B34B /* MovieImageLoaderMock.swift */; };
 		6C321C022C59E22200F8B34B /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321C012C59E22200F8B34B /* UIView+Shimmering.swift */; };
+		6C321C052C5C3FB000F8B34B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C321C042C5C3FB000F8B34B /* Constants.swift */; };
 		6C4446002C55BEEE00EC814B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */; };
 		6C4446022C55BEEE00EC814B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446012C55BEEE00EC814B /* SceneDelegate.swift */; };
 		6C4446042C55BEEE00EC814B /* TopRatedMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4446032C55BEEE00EC814B /* TopRatedMoviesListViewController.swift */; };
@@ -104,6 +105,7 @@
 		6C321BFD2C59DEBA00F8B34B /* TopRatedMoviesLoaderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesLoaderMock.swift; sourceTree = "<group>"; };
 		6C321BFF2C59DEEC00F8B34B /* MovieImageLoaderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageLoaderMock.swift; sourceTree = "<group>"; };
 		6C321C012C59E22200F8B34B /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
+		6C321C042C5C3FB000F8B34B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6C4445FC2C55BEEE00EC814B /* TopRatedMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopRatedMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4445FF2C55BEEE00EC814B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C4446012C55BEEE00EC814B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		6C321BA52C55C05D00F8B34B /* API */ = {
 			isa = PBXGroup;
 			children = (
+				6C321C032C5C3FA100F8B34B /* Helpers */,
 				6C321BA62C55C06800F8B34B /* HTTPClient.swift */,
 				6C321BA82C55C09500F8B34B /* URLSessionHTTPClient.swift */,
 				6C321BAA2C55C10D00F8B34B /* TopRatedMoviesLoader.swift */,
@@ -281,6 +284,14 @@
 				6C321BFF2C59DEEC00F8B34B /* MovieImageLoaderMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		6C321C032C5C3FA100F8B34B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6C321C042C5C3FB000F8B34B /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		6C4445F32C55BEEE00EC814B = {
@@ -441,6 +452,7 @@
 				6C321BF12C5893C600F8B34B /* BasicModalView.swift in Sources */,
 				6C321BAF2C55C62E00F8B34B /* TopRatedMoviesLoaderError.swift in Sources */,
 				6C321BC92C55FB5200F8B34B /* UIView+Extension.swift in Sources */,
+				6C321C052C5C3FB000F8B34B /* Constants.swift in Sources */,
 				6C321C022C59E22200F8B34B /* UIView+Shimmering.swift in Sources */,
 				6C321BE72C575BF500F8B34B /* MovieDetailViewController.swift in Sources */,
 				6C321BAD2C55C30700F8B34B /* MovieItem.swift in Sources */,

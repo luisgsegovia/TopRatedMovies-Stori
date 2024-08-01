@@ -13,7 +13,7 @@ protocol TopRatedMoviesLoaderProtocol {
 
 final class TopRatedMoviesLoader: TopRatedMoviesLoaderProtocol {
     private let client: HTTPClient
-    private let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated")!
+    private let url = URL(string: Endpoint.url)!
 
     init(client: HTTPClient) {
         self.client = client
@@ -45,14 +45,21 @@ final class TopRatedMoviesLoader: TopRatedMoviesLoaderProtocol {
         components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
 
         var request = URLRequest(url: components.url!)
-        request.httpMethod = "GET"
-        request.timeoutInterval = 10
-        request.allHTTPHeaderFields = [
-            "accept": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZTRlYjU5NzExYTUxNWNmNjA2MmMxOWZlMzk1ODRlZCIsIm5iZiI6MTcyMjAzNDU3Mi4yNTgyNzUsInN1YiI6IjY2YTQyODE5MTljNjI0ZWQ3Zjc2NzdhZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Qd_ZpJkhd0mZxixXiegbuK7NSKyvm7THQTfHJuuykBI"
-        ]
+        request.httpMethod = Endpoint.httpMethod
+        request.timeoutInterval = Endpoint.timeoutInterval
+        request.allHTTPHeaderFields = Endpoint.httpHeaders
 
         return request
+    }
+
+    enum Endpoint {
+        static let url = "https://api.themoviedb.org/3/movie/top_rated"
+        static let timeoutInterval: Double = 10
+        static let httpMethod = "GET"
+        static let httpHeaders = [
+            "accept": "application/json",
+            "Authorization": "Bearer \(APIConstants.token)"
+        ]
     }
 }
 
